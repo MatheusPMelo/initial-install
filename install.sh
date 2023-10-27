@@ -9,11 +9,17 @@ sudo apt-get update -y
 sudo apt install gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-#install vscode
-sudo snap install code --classic
+#install notion
+sudo snap install notion-snap-reborn -y
 
 # install openra
-sudo snap install openra
+sudo snap install openra -y
+
+# install alacritty
+sudo snap install alacritty --classic -y
+
+# install vscode
+flatpak install flathub com.visualstudio.code -y
 
 # install VLC
 flatpak install flathub org.videolan.VLC -y
