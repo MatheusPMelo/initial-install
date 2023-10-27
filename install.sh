@@ -2,20 +2,8 @@
 
 sudo apt-get update && sudo apt-get upgrade -y
 
-sudo apt install build-essential git curl snapd flatpak apache2 mysql-client mysql-server htop -y
+sudo apt install build-essential git curl snapd flatpak apache2 mysql-client mysql-server htop folder-color gnome-sushi -y
 sudo apt-get update -y
-
-sudo apt-get install mysql-apt-config mysql-shell -y
-sudo apt-get update -y
-
-# install zsh
-sudo apt-get install zsh -y
-
-# install oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -y
-
-# install zinit
-bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)" -y
 
 # install flatpak
 sudo apt install gnome-software-plugin-flatpak -y
@@ -54,6 +42,9 @@ flatpak install flathub com.discordapp.Discord -y
 # install postman
 flatpak install flathub com.getpostman.Postman -y
 
+# install insomnia
+flatpak install flathub rest.insomnia.Insomnia
+
 # install gimp
 flatpak install flathub org.gimp.GIMP -y
 
@@ -74,6 +65,12 @@ flatpak install flathub com.spotify.Client -y
 
 # install telegram
 flatpak install flathub org.telegram.desktop -y
+
+# install Ghostwriter
+flatpak install flathub io.github.wereturtle.ghostwriter
+
+# install hidamari
+flatpak install flathub io.github.jeffshee.Hidamari
 
 # PHP
 # add repository ppa
