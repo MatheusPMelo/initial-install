@@ -73,14 +73,14 @@ flatpak install flathub com.spotify.Client -y
 flatpak install flathub org.telegram.desktop -y
 
 # install Ghostwriter
-flatpak install flathub io.github.wereturtle.ghostwriter
+flatpak install flathub io.github.wereturtle.ghostwriter -y
 
 # install hidamari
-flatpak install flathub io.github.jeffshee.Hidamari
+flatpak install flathub io.github.jeffshee.Hidamari -y
 
 # PHP
 # add repository ppa
-sudo add-apt-repository ppa:ondrej/php
+sudo add-apt-repository ppa:ondrej/php -y
 sudo apt-get update
 
 # To update these modules use the installation helper below
