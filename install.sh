@@ -2,7 +2,7 @@
 
 sudo apt-get update && sudo apt-get upgrade -y
 
-sudo apt install build-essential git curl snapd flatpak apache2 mysql-shell -y
+sudo apt install build-essential git curl snapd flatpak apache2 mysql-client mysql-server htop -y
 sudo apt-get update -y
 
 sudo apt-get install mysql-apt-config mysql-shell -y
@@ -11,9 +11,21 @@ sudo apt-get update -y
 # install zsh
 sudo apt-get install zsh -y
 
+# install oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -y
+
+# install zinit
+bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)" -y
+
 # install flatpak
 sudo apt install gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+#install vscode
+sudo snap install code --classic
+
+# install openra
+sudo snap install openra
 
 # install VLC
 flatpak install flathub org.videolan.VLC -y
@@ -38,9 +50,6 @@ flatpak install flathub com.brave.Browser -y
 
 # Install discord
 flatpak install flathub com.discordapp.Discord -y
-
-# install vscode
-flatpak install flathub com.visualstudio.code -y
 
 # install postman
 flatpak install flathub com.getpostman.Postman -y
@@ -77,48 +86,6 @@ sudo apt-get install php5.6-fpm php5.6-cli php5.6-cgi php5.6-bcmath php5.6-bz2 p
 # install php7.4
 sudo apt-get install php7.4-fpm php7.4-cli php7.4-cgi php7.4-bcmath php7.4-bz2 php7.4-curl php7.4-dba php7.4-gd php7.4-imap php7.4-intl php7.4-json php7.4-mbstring php7.4-mysql php7.4-odbc php7.4-opcache php7.4-pgsql php7.4-snmp php7.4-soap php7.4-tidy php7.4-xml php7.4-zip libapache2-mod-php7.4 -y
 
-# install php latest
-# sudo apt-get install php -y
-
-# add set_php function
-echo '
-set_php() {
-    sudo update-alternatives --set php /usr/bin/php"$1"
-    sudo a2dismod php"$2"
-    sudo a2enmod php"$1"
-    sudo systemctl restart apache2
-}
-' >> ~/.zshrc
- 
-# install tmux
-sudo apt-get install tmux -y
-touch ~/.tmux.conf
-echo "
-set -g default-terminal 'screen-256color'
-
-unbind C-b
-set-option -g prefix C-a
-bind-key C-a send-prefix
-
-bind | split-window -h
-bind - split-window -v
-
-bind r source-file ~/.tmux.conf
-
-set -g mouse-select-window on
-set -g mouse-select-pane on
-set -g mouse-resize-pane on
-
-set -g mouse on
-
-set-option -g allow-rename off
-
-bind -n M-Left select-pane -L
-bind -n M-Right select-pane -R
-bind -n M-Up select-pane -U
-bind -n M-Down select-pane -D
-" >> ~/.tmux.conf
-
 # install vim
 sudo apt-get install vim -y
 
@@ -135,11 +102,5 @@ sudo apt-get install kdeconnect -y
 # install asdf
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
 echo '. "$HOME/.asdf/asdf.sh"' >> ~/.zshrc
-
-# install oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" -y
-
-# install zinit
-bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)" -y
 
 sudo apt-get update && sudo apt-get upgrade -y
